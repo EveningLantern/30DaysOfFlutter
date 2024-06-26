@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:online_store_basics/widgets/drawers.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,10 +10,12 @@ class HomePage extends StatelessWidget {
     const String name = "ChocoMist";
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xff6C63FF),
+        backgroundColor: const Color(0xff6C63FF),
+        foregroundColor: Colors.white,
         centerTitle: true,
         title: const Text(
-          "Catalog App",
+          "CATALOG APP",
+          style: TextStyle(color: Colors.white),
         ),
       ),
       body: Center(
@@ -20,7 +23,7 @@ class HomePage extends StatelessWidget {
           child: const Text("Welcome to $days days Flutter Challenge by $name"),
         ),
       ),
-      drawer: const Drawer(),
+      drawer: const MyDrawer(),
     );
   }
 }
