@@ -11,20 +11,23 @@ class MyDrawer extends StatelessWidget {
       backgroundColor: const Color(0xff6C63FF),
       child: ListView(
         padding: EdgeInsets.zero,
-        children: [
+        children: const [
           DrawerHeader(
             padding: EdgeInsets.zero,
             child: UserAccountsDrawerHeader(
-              currentAccountPicture:
-                  Image.asset("assets/images/profile_image.png"),
-              decoration: const BoxDecoration(color: Color(0xff6C63FF)),
+              currentAccountPicture: Icon(
+                Icons.person_4,
+                size: 50,
+                color: Colors.white,
+              ),
+              decoration: BoxDecoration(color: Color(0xff6C63FF)),
               margin: EdgeInsets.zero,
-              accountName: const Text(
+              accountName: Text(
                 "Chocomist",
                 style:
                     TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
-              accountEmail: const Text(
+              accountEmail: Text(
                 "chocomist@gmail.com",
                 style:
                     TextStyle(color: Colors.white, fontWeight: FontWeight.bold),

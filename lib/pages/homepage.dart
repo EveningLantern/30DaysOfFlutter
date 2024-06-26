@@ -10,12 +10,12 @@ class HomePage extends StatelessWidget {
     const String name = "ChocoMist";
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xff6C63FF),
-        foregroundColor: Colors.white,
+        //backgroundColor: const Color(0xff6C63FF),
+        //foregroundColor: Colors.white,
         centerTitle: true,
         title: const Text(
           "CATALOG APP",
-          style: TextStyle(color: Colors.white),
+          //style: TextStyle(color: Colors.white),
         ),
       ),
       body: Center(
