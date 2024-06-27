@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
                         fontSize: 24, fontWeight: FontWeight.bold),
                     children: <TextSpan>[
                       TextSpan(
-                        text: name,
+                        text: "\"$name\"",
                         style: const TextStyle(
                             color: Color(0xff6C63FF),
                             fontStyle: FontStyle.italic,
