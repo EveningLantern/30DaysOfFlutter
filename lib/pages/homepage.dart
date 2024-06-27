@@ -4,6 +4,7 @@ import 'package:online_store_basics/models/catalog.dart';
 import 'package:online_store_basics/widgets/drawers.dart';
 import 'package:online_store_basics/widgets/item_widget.dart';
 import 'dart:convert';
+import 'package:velocity_x/velocity_x.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -44,7 +45,7 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.all(16.0),
         child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
             ? GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: 16,
                   crossAxisSpacing: 16,
@@ -57,15 +58,15 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(10)),
                       child: GridTile(
                         header: Container(
-                          padding: EdgeInsets.all(12),
-                          decoration: BoxDecoration(color: Color(0xff6C63FF)),
+                          padding: const EdgeInsets.all(12),
+                          decoration: const BoxDecoration(color: Color(0xff6C63FF)),
                           child: Text(
                             item.name,
-                            style: TextStyle(color: Colors.white),
+                            style: const TextStyle(color: Colors.white),
                           ),
                         ),
-                        child: Image.network(item.image),
                         footer: Text(item.price.toString()),
+                        child: Image.network(item.image),
                       ));
                 },
                 itemCount: CatalogModel.items.length,

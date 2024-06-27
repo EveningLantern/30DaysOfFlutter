@@ -5,7 +5,7 @@ class MyTheme {
   static ThemeData lightTheme(BuildContext context) => ThemeData(
       primaryTextTheme: GoogleFonts.latoTextTheme(),
       fontFamily: GoogleFonts.lato().fontFamily,
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         backgroundColor: Color(0xff6C63FF),
         iconTheme: IconThemeData(color: Colors.white),
         titleTextStyle: TextStyle(color: Colors.white, fontSize: 25),
@@ -14,7 +14,7 @@ class MyTheme {
       brightness: Brightness.dark,
       primaryTextTheme: GoogleFonts.latoTextTheme(),
       fontFamily: GoogleFonts.lato().fontFamily,
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         backgroundColor: Color(0xff6C63FF),
         iconTheme: IconThemeData(color: Colors.white),
         titleTextStyle: TextStyle(color: Colors.white, fontSize: 25),

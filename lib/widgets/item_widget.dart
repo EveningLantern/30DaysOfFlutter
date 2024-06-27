@@ -13,7 +13,7 @@ class ItemWidget extends StatelessWidget {
         onTap: () {
           print("${item.name}pressed");
         },
-        titleTextStyle: TextStyle(color: Color(0xff6C63FF), fontSize: 20),
+        titleTextStyle: const TextStyle(color: Color(0xff6C63FF), fontSize: 20),
         leading: Image.network(item.image),
         title: Text(
           item.name,

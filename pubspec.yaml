@@ -12,6 +12,7 @@ dependencies:
   google_fonts: ^6.2.1
   flutter_animated_button: ^2.0.3
   cupertino_icons: ^1.0.8
+  velocity_x: ^4.2.1
 
 dev_dependencies:
   flutter_test:
