@@ -27,8 +27,8 @@ class HomeDetailsPage extends StatelessWidget {
                   shape: WidgetStateProperty.all(
                     const StadiumBorder(),
                   )),
-              child: "Buy".text.xl2.white.semiBold.make(),
-            ).wh(100, 50)
+              child: "Add to Cart".text.xl2.white.semiBold.make(),
+            ).wh(150, 50)
           ],
         ).p32(),
       ),
@@ -40,7 +40,7 @@ class HomeDetailsPage extends StatelessWidget {
             color: MyTheme.softvioletColor,
           ),
         ),
-        backgroundColor: MyTheme.creamColor,
+        backgroundColor: Colors.transparent,
       ),
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: SafeArea(
@@ -71,6 +71,11 @@ class HomeDetailsPage extends StatelessWidget {
                               .xl
                               .make(),
                           10.heightBox,
+                          "Sodales non eu blandit scelerisque a a pulvinar mauris quis vulputate ipsum a a parturient nisi ultrices a pharetra a eu himenaeos diam. Placerat scelerisque auctor augue turpis euismod ultricies odio vestibulum . Ut suspendisse eget gravida ultricies a dis mattis a libero nisi rhoncus ut ullamcorper volutpat a risus elementum vitae curae vehicula felis. Conubia accumsan metus posuere vestibulum ut mi venenatis potenti magna commodo in at at fringilla sed placerat ipsum et phasellus adipiscing vestibulum nibh quis sed vestibulum. Velit a quam duis risus rhoncus adipiscing primis luctus convallis inceptos iaculis adipiscing cras lectus posuere etiam."
+                              .text
+                              .textStyle(context.captionStyle)
+                              .make()
+                              .p16()
                         ],
                       ).py64(),
                     )),

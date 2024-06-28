@@ -41,7 +41,6 @@ class CatalogItem extends StatelessWidget {
       child: Row(
         children: [
           Hero(
-            
             tag: Key(catalog.id.toString()),
             child: CatalogImage(
               image: catalog.image,
@@ -69,7 +68,7 @@ class CatalogItem extends StatelessWidget {
                         shape: WidgetStateProperty.all(
                           const StadiumBorder(),
                         )),
-                    child: "Buy".text.white.make(),
+                    child: "Add to cart".text.white.make(),
                   )
                 ],
               ).pOnly(right: 8.0)
