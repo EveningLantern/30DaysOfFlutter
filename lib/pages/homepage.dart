@@ -123,7 +123,7 @@ class CatalogItem extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {},
                     style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(
+                        backgroundColor: WidgetStateProperty.all(
                           MyTheme.softvioletColor,
                         ),
                         shape: WidgetStateProperty.all(
