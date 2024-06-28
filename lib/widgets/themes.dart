@@ -19,4 +19,8 @@ class MyTheme {
         iconTheme: IconThemeData(color: Colors.white),
         titleTextStyle: TextStyle(color: Colors.white, fontSize: 25),
       ));
+  // Colors 
+  static const Color softvioletColor = Color(0xff6C63FF);
+  static const Color creamColor = Color(0xfff5f5f5);
+
 }
