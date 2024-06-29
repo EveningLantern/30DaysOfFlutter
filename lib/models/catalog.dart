@@ -1,17 +1,16 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
+
 class CatalogModel {
-  static List<Item> items = [
-    /*Item(
-        id: 1,
-        name: "iphone 12 pro",
-        desc: "Apple phone 12th gen",
-        price: 999,
-        color: "#E7355E",
-        image:
-            "https://i5.walmartimages.com/asr/199ab764-f112-4508-888c-86a1094624e8.17daf90b726900a539a8b9873fdea1f5.jpeg")*/
-  ];
+  static List<Item> items = [];
+
+  // get items  by Id
+  getById(int id) =>
+      items.firstWhere((element) => element.id == id, orElse: null);
+  // get items by position
+  getByPos(int pos) => items[pos];
 }
 
 class Item {
