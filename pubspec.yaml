@@ -1,7 +1,7 @@
 name: online_store_basics
 description: "A new Flutter project."
 publish_to: "none"
-version: 0.1.0
+version: 0.1.1
 
 environment:
   sdk: ">=3.4.0 <4.0.0"
@@ -13,6 +13,7 @@ dependencies:
   flutter_animated_button: ^2.0.3
   cupertino_icons: ^1.0.8
   velocity_x: ^4.2.1
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
