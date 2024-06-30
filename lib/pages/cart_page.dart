@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:online_store_basics/core/store.dart';
 import 'package:online_store_basics/models/cart.dart';
@@ -89,7 +90,12 @@ class _CartList extends StatelessWidget {
     VxState.watch(context, on: [RemoveMutation]);
     final CartModel cart = (VxState.store as MyStore).cart;
     return cart.items.isEmpty
-        ? "Nothing to show".text.xl3.makeCentered()
+        ? Icon(
+            CupertinoIcons.cart,
+            color: context.theme.primaryColor,
+            size: 100.0,
+          )
+        //"Nothing to show".text.xl3.makeCentered()
         : ListView.builder(
             itemCount: cart.items.length,
             itemBuilder: (context, index) => ListTile(
