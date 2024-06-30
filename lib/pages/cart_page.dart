@@ -25,7 +25,7 @@ class MyCart extends StatelessWidget {
       ),
       body: Column(
         children: [
-          _CartList().p32().expand(),
+          const _CartList().p32().expand(),
           const Divider(),
           _CartTotal(),
         ],
@@ -39,17 +39,22 @@ class _CartTotal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final CartModel cart = (VxState.store as MyStore).cart;
+    final CartModel _cart = (VxState.store as MyStore).cart;
     return SizedBox(
       height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\$ ${cart.TotalPrice}"
-              .text
-              .xl5
-              .color(context.theme.primaryColor)
-              .make(),
+          VxBuilder(
+            mutations: const {RemoveMutation},
+            builder: (context, cart, mutations) {
+              return "\$${_cart.totalPrice}"
+                  .text
+                  .xl5
+                  .color(context.theme.primaryColor)
+                  .make();
+            },
+          ),
           30.widthBox,
           ElevatedButton(
                   style: ButtonStyle(
@@ -81,6 +86,7 @@ class _CartList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    VxState.watch(context, on: [RemoveMutation]);
     final CartModel cart = (VxState.store as MyStore).cart;
     return cart.items.isEmpty
         ? "Nothing to show".text.xl3.makeCentered()
@@ -90,10 +96,7 @@ class _CartList extends StatelessWidget {
               leading: const Icon(Icons.done),
               trailing: IconButton(
                 icon: const Icon(Icons.remove_circle_outline),
-                onPressed: () {
-                  cart.remove(cart.items.elementAt(index));
-                  //setState(() {});
-                },
+                onPressed: () => RemoveMutation(cart.items.elementAt(index)),
               ),
               title: cart.items.elementAt(index).name.toString().text.make(),
             ),

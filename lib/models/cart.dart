@@ -20,21 +20,26 @@ class CartModel {
   Iterable get items => _itemIds.map((id) => _catalog.getById(id)).toList();
 
   // get Total Price
-  num get TotalPrice =>
+  num get totalPrice =>
       items.fold(0, (total, current) => total + current.price);
-
-  // remove item
-  void remove(Item item) {
-    _itemIds.remove(item.id.toInt());
-  }
 }
 
 class AddMutation extends VxMutation<MyStore> {
-  late final Item item;
+  final Item item;
 
-  AddMutation(Item catalog);
+  AddMutation(this.item);
   @override
   perform() {
     store?.cart._itemIds.add(item.id.toInt());
+  }
+}
+
+class RemoveMutation extends VxMutation<MyStore> {
+  final Item item;
+
+  RemoveMutation(this.item);
+  @override
+  perform() {
+    store?.cart._itemIds.remove(item.id.toInt());
   }
 }
