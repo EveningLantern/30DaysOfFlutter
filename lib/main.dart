@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:online_store_basics/core/store.dart';
 import 'package:online_store_basics/pages/cart_page.dart';
 import 'package:online_store_basics/pages/homepage.dart';
 import 'package:online_store_basics/pages/loginpage.dart';
 import 'package:online_store_basics/pages/settings.dart';
 import 'package:online_store_basics/utils/routes.dart';
 import 'package:online_store_basics/widgets/themes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(VxState(store: MyStore(), child: const MainApp()));
 }
 
 class MainApp extends StatelessWidget {
@@ -24,9 +26,9 @@ class MainApp extends StatelessWidget {
       routes: {
         "/": (context) => const LoginPage(),
         MyRoutes.loginRoute: (context) => const LoginPage(),
-        MyRoutes.homeRoute: (context) => HomePage(),
-        MyRoutes.settingsRoute: (context) => MySettings(),
-        MyRoutes.cartRoute: (context) => MyCart(),
+        MyRoutes.homeRoute: (context) => const HomePage(),
+        MyRoutes.settingsRoute: (context) => const MySettings(),
+        MyRoutes.cartRoute: (context) => const MyCart(),
       },
     );
   }

@@ -1,11 +1,8 @@
-import 'package:flutter/foundation.dart';
+import 'package:online_store_basics/core/store.dart';
 import 'package:online_store_basics/models/catalog.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class CartModel {
-  static final cartModel = CartModel._internal();
-  CartModel._internal();
-  factory CartModel() => cartModel;
-
   //catalog field
   late CatalogModel _catalog;
 
@@ -16,7 +13,6 @@ class CartModel {
   CatalogModel get catalog => _catalog;
 
   set catalog(CatalogModel newCatalog) {
-    assert(newCatalog != null);
     _catalog = newCatalog;
   }
 
@@ -27,13 +23,18 @@ class CartModel {
   num get TotalPrice =>
       items.fold(0, (total, current) => total + current.price);
 
-  // add item
-  void add(Item item) {
-    _itemIds.add(item.id.toInt());
-  }
-
   // remove item
   void remove(Item item) {
     _itemIds.remove(item.id.toInt());
+  }
+}
+
+class AddMutation extends VxMutation<MyStore> {
+  late final Item item;
+
+  AddMutation(Item catalog);
+  @override
+  perform() {
+    store?.cart._itemIds.add(item.id.toInt());
   }
 }

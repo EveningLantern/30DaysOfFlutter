@@ -5,7 +5,7 @@ import 'package:online_store_basics/models/catalog.dart';
 import 'package:online_store_basics/utils/routes.dart';
 import 'package:online_store_basics/widgets/home_widgets/catalog_header.dart';
 import 'package:online_store_basics/widgets/home_widgets/catalog_list.dart';
-import 'package:online_store_basics/widgets/themes.dart';
+
 import 'dart:convert';
 import 'package:velocity_x/velocity_x.dart';
 
