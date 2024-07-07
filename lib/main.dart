@@ -5,6 +5,7 @@ import 'package:online_store_basics/pages/homepage.dart';
 import 'package:online_store_basics/pages/loginpage.dart';
 import 'package:online_store_basics/pages/settings.dart';
 import 'package:online_store_basics/utils/routes.dart';
+import 'package:online_store_basics/widgets/drawers.dart';
 import 'package:online_store_basics/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -29,6 +30,7 @@ class MainApp extends StatelessWidget {
         MyRoutes.homeRoute: (context) => const HomePage(),
         MyRoutes.settingsRoute: (context) => const MySettings(),
         MyRoutes.cartRoute: (context) => const MyCart(),
+        MyRoutes.drawerRoute: (context) => const MyDrawer(),
       },
     );
   }

@@ -5,6 +5,7 @@ import 'package:online_store_basics/core/store.dart';
 import 'package:online_store_basics/models/cart.dart';
 import 'package:online_store_basics/models/catalog.dart';
 import 'package:online_store_basics/utils/routes.dart';
+import 'package:online_store_basics/widgets/drawers.dart';
 import 'package:online_store_basics/widgets/home_widgets/catalog_header.dart';
 import 'package:online_store_basics/widgets/home_widgets/catalog_list.dart';
 //import 'package:http/http.dart' as http;
@@ -54,6 +55,17 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final cart = (VxState.store as MyStore).cart;
     return Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: Colors.transparent,
+          title: "Magic Cart"
+              .text
+              .xl5
+              .bold
+              .color(context.theme.primaryColor)
+              .make(),
+        ),
+        endDrawer: MyDrawer(),
         floatingActionButton: VxBuilder(
           mutations: const {AddMutation, RemoveMutation},
           builder: (context, _cart, mutations) => FloatingActionButton(
